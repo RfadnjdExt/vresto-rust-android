@@ -1,0 +1,4 @@
+-keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.AnnotationsKt
+-keepclassmembers class id.vresto.pos.data.** { *** Companion; }
+-keepclasseswithmembers class id.vresto.pos.data.** { kotlinx.serialization.KSerializer serializer(...); }

@@ -1,0 +1,14 @@
+backend/target/
+android/.gradle/
+android/build/
+android/app/build/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+.env
+local.properties
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db

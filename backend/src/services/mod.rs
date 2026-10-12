@@ -1,0 +1,11 @@
+pub mod admin;
+pub mod catalog;
+pub mod customers;
+pub mod debts;
+pub mod expenses;
+pub mod orders;
+pub mod refunds;
+pub mod reports;
+pub mod settings;
+pub mod shifts;
+pub mod stock;

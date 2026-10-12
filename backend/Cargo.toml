@@ -1,0 +1,38 @@
+[package]
+name = "vresto-server"
+version = "0.1.0"
+edition = "2021"
+description = "VRESTO POS backend (Rust) — pengganti Laravel"
+publish = false
+
+[lib]
+name = "vresto"
+path = "src/lib.rs"
+doctest = false
+
+[[bin]]
+name = "vresto-server"
+path = "src/main.rs"
+
+[dependencies]
+axum = { version = "0.8", features = ["ws", "macros"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "net", "signal", "time"] }
+tower-http = { version = "0.6", features = ["cors", "trace"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+jsonwebtoken = "9"
+bcrypt = "0.17"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+strip = true
